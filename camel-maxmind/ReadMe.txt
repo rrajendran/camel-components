@@ -1,15 +1,12 @@
 Camel Component Maxmind
 =======================
 
-This project is a template of a Camel component.
-
-To build this project use
-
-    mvn install
-
-Include this in the camel context 
+The maxmind: component provides a bridge for Camel components to talk to maxmind geoip.
+ 
 DEPENDENCY
 ============
+Maven users will need to add the following dependency to their pom.xml for this component:
+
 <dependency>
 	<groupId>com.maxmind.geoip</groupId>
 	<artifactId>geoip-api</artifactId>
@@ -23,19 +20,17 @@ DEPENDENCY
 	<type>bundle</type>
 </dependency>
 		
-CAMEL CONTEXT
+Bean Defintion
 =============
 <bean id="lookupService" class="com.maxmind.geoip.LookupService">
 		<argument  value="src/main/resources/maxmind/GeoLiteCity.dat"/>
 </bean>
 
-ROUTE
+URI format
 =====
-<route>
-	<from uri="timer:foo?delay=500&amp;repeatCount=2"/>
-	<to uri="maxmind://lookupService?query=213.52.50.8" />
-	<log message="${body}" />
-</route>		
+maxmind://lookupService?query=213.52.50.8
 
-    http://camel.apache.org/writing-components.html
-    
+
+Options
+=======
+query - query represents ipaddress or domain name. Returns org.apache.camel.component.entity.GeoLocation.class object.
