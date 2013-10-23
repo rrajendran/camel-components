@@ -1,4 +1,4 @@
 camel-components
 ================
 
-Camel components
+mvn install
