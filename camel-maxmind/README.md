@@ -1,4 +1,4 @@
-Camel Component Maxmind
+Camel Component Maxmind [![Build Status](https://travis-ci.org/rrajendran/camel-components.svg)](https://travis-ci.org/rrajendran/camel-components)
 =======================
 
 The maxmind: component provides a bridge for Camel components to talk to maxmind geoip.
